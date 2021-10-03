@@ -5,8 +5,6 @@
 * kubectl
 * argocd
 
-<br><hr><br>
-
 ## Step by step
 ```shell
 kind create cluster --name argo-cd-demo
