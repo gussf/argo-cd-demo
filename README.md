@@ -18,9 +18,9 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 
 ## GUI credentials
 ```shell
-ARGOCD_PWD=$(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d)
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 
-# login at localhost:8080 as admin/$ARGOCD_PWD
+# login at localhost:8080 as admin/<password>
 ``` 
