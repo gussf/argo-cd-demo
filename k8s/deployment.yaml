@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: argo-cd-demo
+  name: argo-cd-demo-deployment
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: argo-cd-demo
+      app: argo-cd-demo-app
   template:
     metadata:
       labels:
-        app: argo-cd-demo
+        app: argo-cd-demo-app
     spec:
       containers:
-        - name: argo-cd-demo
+        - name: argo-cd-demo-app
           image: gussf/argo-cd-demo-app:v1
           resources:
             limits:
