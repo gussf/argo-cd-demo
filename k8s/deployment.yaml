@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: argo-cd-demo
-          image: gussf/argo-cd-demo-app
+          image: gussf/argo-cd-demo-app:v1
           resources:
             limits:
               memory: "128Mi"
