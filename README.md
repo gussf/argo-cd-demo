@@ -65,6 +65,6 @@ curl localhost:9000
 # Pipeline
 
 ### To Do
-* build
-* publish docker image
-* change image version on deployment.yaml
+* ~~build~~
+* ~~publish docker image~~
+* implement kustomize to use newest image in deployment.yaml
