@@ -39,7 +39,12 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 # login at localhost:8080 as admin/<password>
 ``` 
+
+<br>
+<hr>
+
 <br><br>
+
 
 # Running locally
 
@@ -52,6 +57,8 @@ kubectl port-forward <pod> 9000
 
 curl localhost:9000
 ```
+<br>
+<hr>
 
 <br><br>
 
