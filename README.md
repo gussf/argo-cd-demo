@@ -1,5 +1,12 @@
-# Getting started with setting up ArgoCD
+# Getting started ArgoCD in a pipeline
 <br/>
+
+# Table of Contents
+1. [Setting up](#setting-up)
+2. [Pipeline](#pipeline)
+
+
+<br><br>
 
 # Setting up
 
@@ -18,7 +25,7 @@ kubectl create namespace argocd
 
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/core-install.yaml
 
-argocd app create gus-demo --repo https://github.com/gussf/argo-cd-demo.git --path . --dest-server https://kubernetes.default.svc --dest-namespace default
+argocd app create gus-demo --repo https://github.com/gussf/argo-cd-demo.git --path k8s --dest-server https://kubernetes.default.svc --dest-namespace default
 ```
 
 <br>
@@ -31,4 +38,11 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 # login at localhost:8080 as admin/<password>
 ``` 
-<br> <hr> <br>
+<br><br>
+
+# Pipeline
+
+### To Do
+* build
+* publish docker image
+* change image version on deployment.yaml
