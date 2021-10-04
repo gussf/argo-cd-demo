@@ -3,7 +3,8 @@
 
 # Table of Contents
 1. [Setting up](#setting-up)
-2. [Pipeline](#pipeline)
+2. [Running locally](#running-locally)
+3. [Pipeline](#pipeline)
 
 
 <br><br>
@@ -17,7 +18,7 @@
 
 <br>
 
-## Step by step
+## Cluster
 ```shell
 kind create cluster --name argo-cd-demo
 
@@ -38,6 +39,20 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 # login at localhost:8080 as admin/<password>
 ``` 
+<br><br>
+
+# Running locally
+
+```shell
+argocd app sync gus-demo
+
+kubectl get pods
+
+kubectl port-forward <pod> 9000
+
+curl localhost:9000
+```
+
 <br><br>
 
 # Pipeline
