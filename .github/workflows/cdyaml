@@ -1,0 +1,19 @@
+name: cd
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    name: publish-image
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: Build and push docker image
+        uses: docker/build-push-action@v1.1.0
+        with:
+          username: gussf
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: gussf/argo-cd-demo-app
+          tags: ${{ github.sha }}, latest
