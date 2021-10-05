@@ -2,6 +2,8 @@ name: cd
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
 jobs:
   build:
     name: publish-image
@@ -17,3 +19,29 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: gussf/argo-cd-demo-app
           tags: ${{ github.sha }}, latest
+
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: kustomize
+        uses: imranismail/setup-kustomize@v1
+        with:
+          kustomize_version: v3.6.1
+
+      - name: update k8s
+        run: |
+          cd k8s
+          kustomize edit set image gussf/argo-cd-demo-app:${{ github.sha }}
+          cat kustomization.yaml
+      - name: commit
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "CD Deploy Action"
+          git commit -am "Changing image tag in deployment.yaml to ${{ github.sha }}"
+      - name: push
+        uses: ad-m/github-push-action@master
