@@ -64,7 +64,8 @@ curl localhost:9000
 
 # Pipeline
 
-### To Do
-* ~~build~~
-* ~~publish docker image~~
-* implement kustomize to use newest image in deployment.yaml
+* Builds and tests Go files
+* Builds a new docker image, with commit-sha as it's tag
+* Publishes this new image to docker-hub
+* Calls kustomize and sets this new image in kustomization.yaml and commits to 'main' branch
+* ArgoCD pulls this change and realizes it is unsynced
