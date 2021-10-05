@@ -9,4 +9,4 @@ namespace: gus-demo
 images:
 - name: argo-cd-demo-app
   newName: gussf/argo-cd-demo-app
-  newTag: 6d0ae88ce8a200378a4b7ecbeb4803708f180409
+  newTag: 4a62973a15be499f3d1c2077e15c80f8ebab7d36
