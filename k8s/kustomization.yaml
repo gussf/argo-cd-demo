@@ -1,12 +1,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- deployment.yaml
-- service.yaml
+  - deployment.yaml
+  - service.yaml
 
-namespace: gus-demo
+namespace: default
 
 images:
-- name: argo-cd-demo-app
-  newName: gussf/argo-cd-demo-app
-  newTag: 6d0ae88ce8a200378a4b7ecbeb4803708f180409
+  - name: argo-cd-demo-app
+    newName: gussf/argo-cd-demo-app
+    newTag: 6d0ae88ce8a200378a4b7ecbeb4803708f180409
