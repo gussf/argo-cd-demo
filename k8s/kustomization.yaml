@@ -9,4 +9,4 @@ namespace: default
 images:
 - name: argo-cd-demo-app
   newName: gussf/argo-cd-demo-app
-  newTag: ca90c451b42212801414e148c30aab5a7f5030a8
+  newTag: 31a446e281a75b2a678a5cdee807e354ec88e2e2
