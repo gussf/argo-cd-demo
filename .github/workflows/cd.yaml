@@ -36,7 +36,7 @@ jobs:
       - name: update k8s
         run: |
           cd k8s
-          kustomize edit set image gussf/argo-cd-demo-app:${{ github.sha }}
+          kustomize edit set image argo-cd-demo-app=gussf/argo-cd-demo-app:${{ github.sha }}
           cat kustomization.yaml
       - name: commit
         run: |
