@@ -4,7 +4,7 @@ resources:
   - deployment.yaml
   - service.yaml
 
-namespace: argo-cd-demo-app
+namespace: gus-demo
 
 images:
   - name: argo-cd-demo-app
